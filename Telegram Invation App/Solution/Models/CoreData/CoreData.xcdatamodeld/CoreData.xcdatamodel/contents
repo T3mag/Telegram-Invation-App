@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788" systemVersion="24E248" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="JoinedPeoples" representedClassName="JoinedPeoples" syncable="YES">
+        <attribute name="accentColorID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateJoined" optional="YES" attributeType="String"/>
+        <attribute name="emojiPath" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="peopleId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="photoPath" optional="YES" attributeType="String"/>
+        <relationship name="link" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Link" inverseName="joinedPeoples" inverseEntity="Link"/>
+    </entity>
+    <entity name="Link" representedClassName="Link" syncable="YES">
+        <attribute name="countJoined" optional="YES" attributeType="String"/>
+        <attribute name="linkId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="linkTitile" attributeType="String"/>
+        <relationship name="joinedPeoples" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JoinedPeoples" inverseName="link" inverseEntity="JoinedPeoples"/>
+    </entity>
+</model>
